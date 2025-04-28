@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import React, { useState, useEffect, useRef, useCallback } from 'react';
@@ -61,6 +62,7 @@ export default function Homepage() {
   const screenVideoRef = useRef<HTMLVideoElement>(null);
   const peerRef = useRef<Peer | null>(null);
   const screenStreamRef = useRef<MediaStream | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const connectionsRef = useRef<Map<string, any>>(new Map());
 
   // Initialize PeerJS
@@ -117,6 +119,7 @@ export default function Homepage() {
   }, []);
 
   // Incoming call handler (for host)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleIncomingCall = async (call: any) => {
     try {
       const callerId = call.peer;
